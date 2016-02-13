@@ -1,0 +1,17 @@
+.zoom-area img{
+    width: 500px;
+    height: 500px;
+}
+.zoom-area{
+    margin: 300px auto;
+    display: block;
+    float: left;
+    position: relative;
+}
+.zoom{
+    width: 150px;
+    height: 150px;
+    border: 3px solid #000000;
+    border-radius: 50%;
+    position: absolute;
+}
