@@ -50,17 +50,16 @@ $(document).ready(function(){
 
     });
     $(document).on("scroll",(function() {
-        console.log($(document).scrollTop());
-        console.log($(".our-work").offset().top );
-        if($(document).scrollTop() >= $(".our-work").offset().top -300 ){
+
+        if($(document).scrollTop() >= $(".our-work").offset().top -150 ){
             $(".our-work").animate({opacity:'1'},500)
         }
-        if($(document).scrollTop() >= $(".testimonials").offset().top -300 ){
+        if($(document).scrollTop() >= $(".testimonials").offset().top -150 ){
             $(".testimonials").animate({opacity:'1'},500)
         }
         if($(document).scrollTop() >= 150){
             $(".navbars").addClass("white");
-            console.log($(document).scrollTop())
+
         }
         if($(document).scrollTop() <= 150   ){
             $(".navbars").removeClass("white")
@@ -70,7 +69,22 @@ $(document).ready(function(){
     $(".show-more").on("click",function(){
         $(".our-work .hidden").fadeIn(800);
     });
-
+    $(".test li").slideUp(0);
+    $(".test").on("click",function(){
+        $("li",this).slideToggle();
+    });
+    $(".allbuton").on("click", function () {
+      $(".new").show(250);
+    });
+    $(".manbutton").on("click", function () {
+        $(".kids , .woman").hide(250);
+    });
+    $(".kidsbutton").on("click", function () {
+        $(".man , .woman").hide(250);
+    });
+    $(".womanbutton").on("click", function () {
+        $(".kids , .man").hide(250);
+    });
     // When the window has finished loading create our google map below
     google.maps.event.addDomListener(window, 'load', init);
 
@@ -103,8 +117,5 @@ $(document).ready(function(){
             title: 'Snazzy!'
         });
     }
-    $(".test li").slideUp(0);
-    $(".test").on("click",function(){
-        $("li",this).slideToggle();
-    });
+
 });
